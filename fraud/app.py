@@ -19,7 +19,7 @@ print(current_working_directory)
 
 # Load objects if they exist, else stop the app
 if not all(map(os.path.isfile, [model_path, scaler_path, pca_path, onehot_encoder_path])):
-    st.error("Error: Necessary model files are missing.")
+    st.error("Error: Necessary model files are missing. meow")
     st.stop()
 
 model = joblib.load(model_path)
