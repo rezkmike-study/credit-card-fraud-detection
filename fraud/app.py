@@ -12,9 +12,9 @@ pca_path = 'pca.joblib'
 onehot_encoder_path = 'onehot_encoder.joblib'
 
 # Load objects if they exist, else stop the app
-if not all(map(os.path.isfile, [model_path, scaler_path, pca_path, onehot_encoder_path])):
-    st.error("Error: Necessary model files are missing. meow1")
-    st.stop()
+# if not all(map(os.path.isfile, [model_path, scaler_path, pca_path, onehot_encoder_path])):
+#     st.error("Error: Necessary model files are missing. meow1")
+#     st.stop()
 
 model = joblib.load(model_path)
 scaler = joblib.load(scaler_path)
