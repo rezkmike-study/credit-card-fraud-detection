@@ -60,9 +60,6 @@ def user_input_features():
     city = st.sidebar.selectbox('City', ('Sixes', 'Riverton', 'Superior', 'Manley'))
     state = st.sidebar.selectbox('State', ('OR', 'WY', 'AZ', 'NE'))
     job = st.sidebar.selectbox('Job', ('Video editor'))
-    dob = st.sidebar.selectbox('DOB', ('14/09/1956'))
-    trans_num = st.sidebar.selectbox('Transaction Number', ('b2cd7d04dbb330dd548105b12ak44ba4'))
-    trans_date_trans_time = st.sidebar.selectbox('Transaction Number', ('16/01/2019 11:26'))
 
     # Combine the features into a dataframe
     data = {
@@ -85,10 +82,7 @@ def user_input_features():
         'state_WY': 1 if state == 'WY' else 0,
         'state_OR': 1 if state == 'AZ' else 0,
         'state_NE': 1 if state == 'NE' else 0,
-        'job': 1 if job == 'Video editor' else 0,
-        'dob': 1 if dob == '14/09/1956' else 0,
-        'trans_num': 1 if trans_num == 'b2cd7d04dbb330dd548105b12ak44ba4' else 0,
-        'trans_date_trans_time': 1 if trans_date_trans_time == '16/01/2019 11:26' else 0
+        'job': 1 if job == 'Video editor' else 0
     }
 
     features = pd.DataFrame(data, index=[0])

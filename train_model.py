@@ -33,11 +33,11 @@ for col in numerical_columns:
 onehot_encoder = OneHotEncoder(sparse=False)
 label_encoder = LabelEncoder()
 label_encoder.fit(winsorized_data_zscore['is_fraud'])
-onehot_encoded_data = onehot_encoder.fit_transform(winsorized_data_zscore[['trans_date_trans_time', 'merchant', 'category', 'city', 'state', 'job', 'dob', 'trans_num']])
+onehot_encoded_data = onehot_encoder.fit_transform(winsorized_data_zscore[['merchant', 'category', 'city', 'state', 'job']])
 label_encoded_data = label_encoder.transform(winsorized_data_zscore['is_fraud'])
 
 # Create DataFrames for encoded data
-onehot_df = pd.DataFrame(onehot_encoded_data, columns=onehot_encoder.get_feature_names_out(['trans_date_trans_time', 'merchant', 'category', 'city', 'state', 'job', 'dob', 'trans_num']))
+onehot_df = pd.DataFrame(onehot_encoded_data, columns=onehot_encoder.get_feature_names_out(['merchant', 'category', 'city', 'state', 'job']))
 
 # Concatenate the encoded data with the original dataset
 encoded_data = pd.concat([winsorized_data_zscore.drop(columns=['trans_date_trans_time', 'merchant', 'category', 'city', 'state', 'job', 'dob', 'trans_num']), 
