@@ -7,9 +7,9 @@ from sklearn.preprocessing import StandardScaler
 
 # Paths for the model, scaler, PCA, and encoders
 model_path = '/mount/src/credit-card-fraud-detection/fraud/fraud.joblib'
-scaler_path = 'scaler.joblib'
-pca_path = 'pca.joblib'
-onehot_encoder_path = 'onehot_encoder.joblib'
+scaler_path = '/mount/src/credit-card-fraud-detection/fraud/scaler.joblib'
+pca_path = '/mount/src/credit-card-fraud-detection/fraud/pca.joblib'
+onehot_encoder_path = '/mount/src/credit-card-fraud-detection/fraud/onehot_encoder.joblib'
 
 # Load objects if they exist, else stop the app
 if not all(map(os.path.isfile, [model_path, scaler_path, pca_path, onehot_encoder_path])):
