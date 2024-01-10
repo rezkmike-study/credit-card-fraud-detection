@@ -6,11 +6,11 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 
 # Paths for the model, scaler, PCA, and encoders
-model_path = './loan_status_model.joblib'
-scaler_path = './scaler.joblib'
-pca_path = './pca.joblib'
-onehot_encoder_path = './onehot_encoder.joblib'
-label_encoder_path = './label_encoder.joblib'
+model_path = '/mount/src/credit-card-fraud-detection/risk/loan_status_model.joblib'
+scaler_path = '/mount/src/credit-card-fraud-detection/risk/scaler.joblib'
+pca_path = '/mount/src/credit-card-fraud-detection/risk/pca.joblib'
+onehot_encoder_path = '/mount/src/credit-card-fraud-detection/risk/onehot_encoder.joblib'
+label_encoder_path = '/mount/src/credit-card-fraud-detection/risk/label_encoder.joblib'
 
 # Load objects if they exist, else stop the app
 if not all(map(os.path.isfile, [model_path, scaler_path, pca_path, onehot_encoder_path, label_encoder_path])):
