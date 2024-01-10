@@ -6,7 +6,7 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 
 # Paths for the model, scaler, PCA, and encoders
-model_path = './fraud.joblib'
+model_path = '/mount/src/credit-card-fraud-detection/fraud/fraud.joblib'
 scaler_path = 'scaler.joblib'
 pca_path = 'pca.joblib'
 onehot_encoder_path = 'onehot_encoder.joblib'
