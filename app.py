@@ -28,7 +28,8 @@ def preprocess_input(input_data):
                              'merchant_Cummerata-Jones', 'merchant_Pouros-Haag', 'merchant_Larson-Moen',
                              'merchant_Goodwin-Nitzsche', 'city_Sixes', 'city_Riverton',
                              'city_Superior', 'city_Manley', 'state_OR',
-                             'state_WY', 'state_OR', 'state_NE']
+                             'state_WY', 'state_OR', 'state_NE',
+                             'job']
 
     # Reorder the columns in the input_data DataFrame to match the training order
     input_data = input_data[training_column_order]
