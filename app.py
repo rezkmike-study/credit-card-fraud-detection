@@ -25,7 +25,7 @@ def preprocess_input(input_data):
     # Ensure the input_data columns match the expected training columns
     training_column_order = ['amt', 'lat', 'long',
                              'merch_lat', 'merch_long', 'city_pop',
-                             'merchant', 'city', 'state',
+                             'city', 'state',
                              'job']
 
     # Reorder the columns in the input_data DataFrame to match the training order
@@ -52,7 +52,6 @@ def user_input_features():
     city_pop = st.sidebar.slider('City Population', 0.0, 1000000, 50000)
 
     # Categorical features - Replace with actual categories from your dataset
-    merchant = st.sidebar.selectbox('Merchant', ('Cummerata-Jones'))
     category = st.sidebar.selectbox('Transaction Category', ('shopping_pos'))
     city = st.sidebar.selectbox('City', ('Sixes'))
     state = st.sidebar.selectbox('State', ('OR'))
@@ -66,7 +65,6 @@ def user_input_features():
         'merch_lat': merch_lat,
         'merch_long': merch_long,
         'city_pop': city_pop,
-        'merchant': 1 if merchant == 'Cummerata-Jones' else 0,
         'category': 1 if category == 'shopping_pos' else 0,
         'city': 1 if city == 'Sixes' else 0,
         'state': 1 if state == 'OR' else 0,
