@@ -86,7 +86,7 @@ print("Classification Report for Random Forest:")
 print(pd.DataFrame(report_rf).transpose())
 
 # Save the trained Random Forest model and other components using joblib for better compression
-joblib.dump(random_forest, 'loan_status_model.joblib', compress=3)
+joblib.dump(random_forest, 'fraud_detection_model.joblib', compress=3)
 joblib.dump(scaler, 'scaler.joblib', compress=3)
 joblib.dump(pca_18, 'pca.joblib', compress=3)
 joblib.dump(onehot_encoder, 'onehot_encoder.joblib', compress=3)
