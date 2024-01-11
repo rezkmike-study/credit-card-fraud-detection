@@ -23,8 +23,7 @@ onehot_encoder = joblib.load(onehot_encoder_path)
 
 def preprocess_input(input_data):
     # Ensure the input_data columns match the expected training columns
-    training_column_order = ['amt', 'lat', 'long', 'merch_lat', 'merch_long', 'city_pop', 
-                             'category_shopping_pos', 'category_entertainment', 'category_gas_transport', 
+    training_column_order = ['category_shopping_pos', 'category_entertainment', 'category_gas_transport', 
                              'category_grocery_net', 'category_grocery_pos', 'category_misc_net', 'category_misc_pos',
                              'category_shopping_net', 'city_Orient', 'city_Malad-City', 'city_Grenada', 'city_High-Rolls-Mountain-Park', 
                              'city_Freedom', 'city_Honokaa', 'city_Valentine', 'city_Westfir', 'city_Thompson', 'city_Conway', 'city_Athena', 
@@ -38,7 +37,9 @@ def preprocess_input(input_data):
                              'city_Kent', 'city_Fiddletown', 'city_Huntington-Beach', 'city_Meridian', 'city_Glendale', 'city_Alva', 
                              'city_Blairstown', 'city_Laguna-Hills', 'city_Albuquerque', 'city_Azusa', 'city_Gardiner', 'city_Rock-Springs', 
                              'city_Paauilo', 'city_Eugene', 'city_Daly-City', 'city_Mendon', 'city_Powell-Butte', 'state_WA', 'state_ID', 'state_CA', 
-                             'state_NM', 'state_WY', 'state_HI', 'state_NE', 'state_OR', 'state_UT', 'state_AZ', 'state_CO', 'state_MO', 'state_AK']
+                             'state_NM', 'state_WY', 'state_HI', 'state_NE', 'state_OR', 'state_UT', 'state_AZ', 'state_CO', 'state_MO', 'state_AK',
+                             'amt', 'lat', 'long', 'merch_lat', 'merch_long', 'city_pop'
+                            ]
 
     # Reorder the columns in the input_data DataFrame to match the training order
     input_data = input_data[training_column_order]
@@ -86,7 +87,6 @@ def user_input_features():
         'category_misc_net': 1 if category == 'misc_net' else 0,
         'category_misc_pos': 1 if category == 'misc_pos' else 0,
         'category_shopping_net': 1 if category == 'shopping_net' else 0,
-        'amt': amt,
         'city_Orient': 1 if city == 'Orient' else 0,
         'city_Malad-City': 1 if city == 'Malad-City' else 0,
         'city_Grenada': 1 if city == 'Grenada' else 0,
@@ -169,11 +169,12 @@ def user_input_features():
         'state_CO': 1 if state == 'CO' else 0,
         'state_MO': 1 if state == 'MO' else 0,
         'state_AK': 1 if state == 'AK' else 0,
+        'amt': amt,
         'lat': lat,
         'long': long,
-        'city_pop': city_pop,
         'merch_lat': merch_lat,
-        'merch_long': merch_long
+        'merch_long': merch_long,
+        'city_pop': city_pop,
     }
 
     features = pd.DataFrame(data, index=[0])
