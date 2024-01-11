@@ -187,7 +187,7 @@ def main():
     st.markdown("""
         <style>
         .main {
-            background-color: #F5F5F5;
+            background-color: #171716;
         }
         .description {
             border: 1px solid #4F8BF9;
