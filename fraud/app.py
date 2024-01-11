@@ -25,9 +25,11 @@ def preprocess_input(input_data):
     # Ensure the input_data columns match the expected training columns
     training_column_order = ['amt', 'lat', 'long', 'merch_lat', 'merch_long', 'city_pop', 
                              'category_shopping_pos', 'category_entertainment', 'category_gas_transport', 
-                             'category_grocery_net', 'category_grocery_pos', 'category_misc_net', 'city_Sixes', 
+                             'category_grocery_net', 'category_grocery_pos', 'category_misc_net', 'category_misc_pos',
+                             'category_shopping_net', 'city_Sixes', 
                              'city_Albuquerque', 'city_Alva', 'city_Athena', 'city_Azusa',
-                             'city_Ballwin', 'city_Blairsden-Graeagle', 'state_OR']
+                             'city_Ballwin', 'city_Blairsden-Graeagle', 'city_Blairstown',
+                             'city_Browning', 'city_Burlington', 'state_OR']
 
     # Reorder the columns in the input_data DataFrame to match the training order
     input_data = input_data[training_column_order]
@@ -71,7 +73,7 @@ def user_input_features():
         'category_grocery_net': 1 if category == 'grocery_net' else 0,
         'category_grocery_pos': 1 if category == 'grocery_pos' else 0,
         'category_misc_net': 1 if category == 'misc_net' else 0,
-        'category_misc_post': 1 if category == 'misc_pos' else 0,
+        'category_misc_pos': 1 if category == 'misc_pos' else 0,
         'category_shopping_net': 1 if category == 'shopping_net' else 0,
         'city_Sixes': 1 if city == 'Sixes' else 0,
         'city_Albuquerque': 1 if city == 'Albuquerque' else 0,
@@ -80,6 +82,9 @@ def user_input_features():
         'city_Azusa': 1 if city == 'Azusa' else 0,
         'city_Ballwin': 1 if city == 'Ballwin' else 0,
         'city_Blairsden-Graeagle': 1 if city == 'Blairsden-Graeagle' else 0,
+        'city_Blairstown': 1 if city == 'Blairstown' else 0,
+        'city_Browning': 1 if city == 'Browning' else 0,
+        'city_Burlington': 1 if city == 'Burlington' else 0,
         'state_OR': 1 if state == 'OR' else 0,
     }
 
