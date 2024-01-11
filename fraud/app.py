@@ -221,7 +221,7 @@ def main():
         prediction = model.predict(preprocessed_input)
         
         # Convert prediction to interpretable output
-        prediction_text = "Fraud Txn" if prediction[0] == 1 else "Not Fraud Txn"
+        prediction_text = "Fraud Txn" if prediction[0] == 1 else "Not Fraud"
 
         # Display the prediction with styling
         st.subheader("Prediction")
