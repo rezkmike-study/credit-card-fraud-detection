@@ -58,7 +58,7 @@ def user_input_features():
 
     # Numerical features - Adjust the ranges and default values as needed
     amt = st.sidebar.number_input('Transaction Amount', value=50000, min_value=100, max_value=1000000, step=1000)
-    lat = st.sidebar.number_input('Transaction Latitude', value=43.00, min_value=-90.00, max_value=90.00, step=1000)
+    lat = st.sidebar.number_input('Transaction Latitude', value=43, min_value=-90, max_value=90, step=1000)
     long = st.sidebar.number_input('Transaction Longitude', value=-108, min_value=-180, max_value=180, step=1000)
     merch_lat = st.sidebar.number_input('Merchant Latitude', value=43, min_value=-90, max_value=90, step=1000)
     merch_long = st.sidebar.number_input('Merchant Longitude', value=-108, min_value=-180, max_value=180, step=1000)
