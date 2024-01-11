@@ -37,7 +37,8 @@ def preprocess_input(input_data):
                              'city_Llano', 'city_Carlotta', 'city_Dumont', 'city_Fullerton', 'city_North-Loup', 'city_Browning', 
                              'city_Kent', 'city_Fiddletown', 'city_Huntington-Beach', 'city_Meridian', 'city_Glendale', 'city_Alva', 
                              'city_Blairstown', 'city_Laguna-Hills', 'city_Albuquerque', 'city_Azusa', 'city_Gardiner', 'city_Rock-Springs', 
-                             'city_Paauilo', 'city_Eugene', 'city_Daly-City', 'city_Mendon', 'city_Powell-Butte',   'state_OR']
+                             'city_Paauilo', 'city_Eugene', 'city_Daly-City', 'city_Mendon', 'city_Powell-Butte', 'state_WA', 'state_ID', 'state_CA', 
+                             'state_NM', 'state_WY', 'state_HI', 'state_NE', 'state_OR', 'state_UT', 'state_AZ', 'state_CO', 'state_MO', 'state_AK']
 
     # Reorder the columns in the input_data DataFrame to match the training order
     input_data = input_data[training_column_order]
@@ -73,7 +74,7 @@ def user_input_features():
                                          'Greenview', 'Lakeport', 'Llano', 'Carlotta', 'Dumont', 'Fullerton', 'North-Loup', 'Browning', 'Kent', 
                                          'Fiddletown', 'Huntington-Beach', 'Meridian', 'Glendale', 'Alva', 'Blairstown', 'Laguna-Hills', 
                                          'Albuquerque', 'Azusa', 'Gardiner', 'Rock-Springs', 'Paauilo', 'Eugene', 'Daly-City', 'Mendon', 'Powell-Butte'))
-    state = st.sidebar.selectbox('State', ('OR'))
+    state = st.sidebar.selectbox('State', ('WA', 'ID', 'CA', 'NM', 'WY', 'HI', 'NE', 'OR', 'UT', 'AZ', 'CO', 'MO', 'AK'))
 
     # Combine the features into a dataframe
     data = {
@@ -160,7 +161,19 @@ def user_input_features():
         'city_Daly-City': 1 if city == 'Daly-City' else 0,
         'city_Mendon': 1 if city == 'Mendon' else 0,
         'city_Powell-Butte': 1 if city == 'Powell-Butte' else 0,
+        'state_WA': 1 if state == 'WA' else 0,
+        'state_ID': 1 if state == 'ID' else 0,
+        'state_CA': 1 if state == 'CA' else 0,
+        'state_NM': 1 if state == 'NM' else 0,
+        'state_WY': 1 if state == 'WY' else 0,
+        'state_HI': 1 if state == 'HI' else 0,
+        'state_NE': 1 if state == 'NE' else 0,
         'state_OR': 1 if state == 'OR' else 0,
+        'state_UT': 1 if state == 'UT' else 0,
+        'state_AZ': 1 if state == 'AZ' else 0,
+        'state_CO': 1 if state == 'CO' else 0,
+        'state_MO': 1 if state == 'MO' else 0,
+        'state_AK': 1 if state == 'AK' else 0
     }
 
     features = pd.DataFrame(data, index=[0])
