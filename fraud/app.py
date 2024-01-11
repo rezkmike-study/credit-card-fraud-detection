@@ -182,7 +182,7 @@ def user_input_features():
 
 
 def main():
-    st.title("Group 5 - Fraud Transaction Prediction")
+    st.title("Group 5 - Fraud Transaction Prediction (WQD7004)")
 
     # Custom Styling with a border for the description
     st.markdown("""
