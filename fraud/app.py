@@ -64,7 +64,15 @@ def user_input_features():
 
     # Categorical features - Replace with actual categories from your dataset
     category = st.sidebar.selectbox('Transaction Category', ('shopping_pos', 'entertainment', 'gas_transport', 'grocery_net', 'grocery_pos', 'misc_net'))
-    city = st.sidebar.selectbox('City', ('Sixes'))
+    city = st.sidebar.selectbox('City', ('Orient', 'Malad-City', 'Grenada', 'High-Rolls-Mountain-Park', 'Freedom', 'Honokaa', 
+                                         'Valentine', 'Westfir', 'Thompson', 'Conway', 'Athena', 'San-Jose', 'Ravenna', 'Parks', 
+                                         'Fort-Washakie', 'Littleton', 'Meadville', 'Moab', 'Hawthorne', 'Manville', 'June-Lake', 
+                                         'Sixes', 'Holstein', 'Westerville', 'Ballwin', 'Fields-Landing', 'Louisiana', 'Kansas-City', 
+                                         'Mesa', 'Lonetree', 'Centerview', 'Colorado-Springs', 'Blairsden-Graeagle', 'Cardwell', 'Phoenix', 
+                                         'Newhall', 'Tomales', 'Redford', 'Weeping-Water', 'Portland', 'Iliff', 'Burlington', 'Wales', 'Mound-City', 
+                                         'Greenview', 'Lakeport', 'Llano', 'Carlotta', 'Dumont', 'Fullerton', 'North-Loup', 'Browning', 'Kent', 
+                                         'Fiddletown', 'Huntington-Beach', 'Meridian', 'Glendale', 'Alva', 'Blairstown', 'Laguna-Hills', 
+                                         'Albuquerque', 'Azusa', 'Gardiner', 'Rock-Springs', 'Paauilo', 'Eugene', 'Daly-City', 'Mendon', 'Powell-Butte'))
     state = st.sidebar.selectbox('State', ('OR'))
 
     # Combine the features into a dataframe
