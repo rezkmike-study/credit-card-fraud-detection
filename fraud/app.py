@@ -23,7 +23,9 @@ onehot_encoder = joblib.load(onehot_encoder_path)
 
 def preprocess_input(input_data):
     # Ensure the input_data columns match the expected training columns
-    training_column_order = ['amt', 'lat', 'long', 'merch_lat', 'merch_long', 'city_pop', 'category_shopping_pos', 'city_Sixes', 'state_OR']
+    training_column_order = ['amt', 'lat', 'long', 'merch_lat', 'merch_long', 'city_pop', 
+                             'category_shopping_pos', 'category_entertainment', 'category_gas_transport', 
+                             'category_grocery_net', 'category_grocery_pos', 'category_misc_net', 'city_Sixes', 'state_OR']
 
     # Reorder the columns in the input_data DataFrame to match the training order
     input_data = input_data[training_column_order]
@@ -49,7 +51,7 @@ def user_input_features():
     city_pop = st.sidebar.number_input('City Population', value=50000, min_value=10000, max_value=1000000, step=1000)
 
     # Categorical features - Replace with actual categories from your dataset
-    category = st.sidebar.selectbox('Transaction Category', ('shopping_pos'))
+    category = st.sidebar.selectbox('Transaction Category', ('shopping_pos', 'entertainment', 'gas_transport', 'grocery_net', 'grocery_pos', 'misc_net'))
     city = st.sidebar.selectbox('City', ('Sixes'))
     state = st.sidebar.selectbox('State', ('OR'))
 
@@ -62,6 +64,11 @@ def user_input_features():
         'merch_long': merch_long,
         'city_pop': city_pop,
         'category_shopping_pos': 1 if category == 'shopping_pos' else 0,
+        'category_entertainment': 1 if category == 'entertainment' else 0,
+        'category_gas_transport': 1 if category == 'gas_transport' else 0,
+        'category_grocery_net': 1 if category == 'grocery_net' else 0,
+        'category_grocery_pos': 1 if category == 'grocery_pos' else 0,
+        'category_misc_net': 1 if category == 'misc_net' else 0,
         'city_Sixes': 1 if city == 'Sixes' else 0,
         'state_OR': 1 if state == 'OR' else 0,
     }
