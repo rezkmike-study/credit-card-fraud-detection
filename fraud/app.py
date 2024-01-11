@@ -23,7 +23,7 @@ onehot_encoder = joblib.load(onehot_encoder_path)
 
 def preprocess_input(input_data):
     # Ensure the input_data columns match the expected training columns
-    training_column_order = ['amt', 'lat', 'long', 'merch_lat', 'merch_long', 'city_pop', 'category', 'city', 'state']
+    training_column_order = ['amt', 'lat', 'long', 'merch_lat', 'merch_long', 'city_pop', 'category_shopping_pos', 'city_Sixes', 'state_OR']
 
     # Reorder the columns in the input_data DataFrame to match the training order
     input_data = input_data[training_column_order]
@@ -61,9 +61,9 @@ def user_input_features():
         'merch_lat': merch_lat,
         'merch_long': merch_long,
         'city_pop': city_pop,
-        'category': 1 if category == 'shopping_pos' else 0,
-        'city': 1 if city == 'Sixes' else 0,
-        'state': 1 if state == 'OR' else 0,
+        'category_shopping_pos': 1 if category == 'shopping_pos' else 0,
+        'city_Sixes': 1 if city == 'Sixes' else 0,
+        'state_OR': 1 if state == 'OR' else 0,
     }
 
     features = pd.DataFrame(data, index=[0])
