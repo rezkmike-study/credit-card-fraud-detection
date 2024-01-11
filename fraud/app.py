@@ -37,7 +37,8 @@ def preprocess_input(input_data):
                              'city_Portland', 'city_Powell-Butte', 'city_Ravenna', 'city_Redford', 'city_Rock-Springs', 'city_San-Jose', 'city_Sixes', 
                              'city_Thompson', 'city_Tomales', 'city_Valentine', 'city_Wales', 'city_Weeping-Water', 'city_Westerville', 'city_Westfir', 
                              'city_Orient',   
-                             'state_AK', 'state_AZ', 'state_CA', 'state_CO', 'state_HI', 'state_ID', 'state_MO', 'state_NE', 'state_NM''state_OR', 'state_UT', 'state_WA', 'state_WY'
+                             'state_AK', 'state_AZ', 'state_CA', 'state_CO', 'state_HI', 'state_ID', 'state_MO', 'state_NE', 'state_NM',
+                             'state_OR', 'state_UT', 'state_WA', 'state_WY'
                             ]
 
     # Reorder the columns in the input_data DataFrame to match the training order
