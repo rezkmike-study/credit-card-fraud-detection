@@ -46,7 +46,7 @@ def user_input_features():
     long = st.sidebar.number_input('Transaction Longitude', value=-108.2024, min_value=-180, max_value=180, step=1000)
     merch_lat = st.sidebar.number_input('Merchant Latitude', value=43.0351, min_value=-90, max_value=90, step=1000)
     merch_long = st.sidebar.number_input('Merchant Longitude', value=-108.2024, min_value=-180, max_value=180, step=1000)
-    city_pop = st.sidebar.slider('City Population', 0.0, 1000000, 50000)
+    city_pop = st.sidebar.number_input('City Population', value=50000, min_value=10000, max_value=1000000, step=1000)
 
     # Categorical features - Replace with actual categories from your dataset
     category = st.sidebar.selectbox('Transaction Category', ('shopping_pos'))
