@@ -26,7 +26,8 @@ def preprocess_input(input_data):
     training_column_order = ['amt', 'lat', 'long', 'merch_lat', 'merch_long', 'city_pop', 
                              'category_shopping_pos', 'category_entertainment', 'category_gas_transport', 
                              'category_grocery_net', 'category_grocery_pos', 'category_misc_net', 'city_Sixes', 
-                             'city_Albuquerque', 'city_Alva', 'city_Athena', 'state_OR']
+                             'city_Albuquerque', 'city_Alva', 'city_Athena', 'city_Azusa',
+                             'city_Ballwin', 'city_Blairsden-Graeagle', 'state_OR']
 
     # Reorder the columns in the input_data DataFrame to match the training order
     input_data = input_data[training_column_order]
@@ -76,6 +77,9 @@ def user_input_features():
         'city_Albuquerque': 1 if city == 'Albuquerque' else 0,
         'city_Alva': 1 if city == 'Alva' else 0,
         'city_Athena': 1 if city == 'Athena' else 0,
+        'city_Azusa': 1 if city == 'Azusa' else 0,
+        'city_Ballwin': 1 if city == 'Ballwin' else 0,
+        'city_Blairsden-Graeagle': 1 if city == 'Blairsden-Graeagle' else 0,
         'state_OR': 1 if state == 'OR' else 0,
     }
 
