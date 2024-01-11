@@ -79,6 +79,12 @@ def user_input_features():
 
     # Combine the features into a dataframe
     data = {
+        'amt': amt,
+        'lat': lat,
+        'long': long,
+        'merch_lat': merch_lat,
+        'merch_long': merch_long,
+        'city_pop': city_pop,
         'category_shopping_pos': 1 if category == 'shopping_pos' else 0,
         'category_entertainment': 1 if category == 'entertainment' else 0,
         'category_gas_transport': 1 if category == 'gas_transport' else 0,
@@ -168,13 +174,7 @@ def user_input_features():
         'state_AZ': 1 if state == 'AZ' else 0,
         'state_CO': 1 if state == 'CO' else 0,
         'state_MO': 1 if state == 'MO' else 0,
-        'state_AK': 1 if state == 'AK' else 0,
-        'amt': amt,
-        'lat': lat,
-        'long': long,
-        'merch_lat': merch_lat,
-        'merch_long': merch_long,
-        'city_pop': city_pop,
+        'state_AK': 1 if state == 'AK' else 0
     }
 
     features = pd.DataFrame(data, index=[0])
