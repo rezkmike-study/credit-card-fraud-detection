@@ -23,7 +23,8 @@ onehot_encoder = joblib.load(onehot_encoder_path)
 
 def preprocess_input(input_data):
     # Ensure the input_data columns match the expected training columns
-    training_column_order = ['category_shopping_pos', 'category_entertainment', 'category_gas_transport', 
+    training_column_order = ['amt', 'lat', 'long', 'merch_lat', 'merch_long', 'city_pop',
+                             'category_shopping_pos', 'category_entertainment', 'category_gas_transport', 
                              'category_grocery_net', 'category_grocery_pos', 'category_misc_net', 'category_misc_pos',
                              'category_shopping_net', 'city_Orient', 'city_Malad-City', 'city_Grenada', 'city_High-Rolls-Mountain-Park', 
                              'city_Freedom', 'city_Honokaa', 'city_Valentine', 'city_Westfir', 'city_Thompson', 'city_Conway', 'city_Athena', 
@@ -38,7 +39,6 @@ def preprocess_input(input_data):
                              'city_Blairstown', 'city_Laguna-Hills', 'city_Albuquerque', 'city_Azusa', 'city_Gardiner', 'city_Rock-Springs', 
                              'city_Paauilo', 'city_Eugene', 'city_Daly-City', 'city_Mendon', 'city_Powell-Butte', 'state_WA', 'state_ID', 'state_CA', 
                              'state_NM', 'state_WY', 'state_HI', 'state_NE', 'state_OR', 'state_UT', 'state_AZ', 'state_CO', 'state_MO', 'state_AK',
-                             'amt', 'lat', 'long', 'merch_lat', 'merch_long', 'city_pop'
                             ]
 
     # Reorder the columns in the input_data DataFrame to match the training order
