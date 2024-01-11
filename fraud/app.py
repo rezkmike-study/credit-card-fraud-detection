@@ -16,7 +16,7 @@ if not all(map(os.path.isfile, [model_path, scaler_path, pca_path, onehot_encode
     st.error("Error: Necessary model files are missing. meow1")
     st.stop()
 
-model = joblib.load(model_path)
+# model = joblib.load(model_path)
 scaler = joblib.load(scaler_path)
 pca = joblib.load(pca_path)
 onehot_encoder = joblib.load(onehot_encoder_path)
