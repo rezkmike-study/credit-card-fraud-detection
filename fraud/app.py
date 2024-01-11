@@ -16,7 +16,7 @@ if not all(map(os.path.isfile, [model_path, scaler_path, pca_path, onehot_encode
     st.error("Error: Necessary model files are missing. meow1")
     st.stop()
 
-# model = joblib.load(model_path)
+model = joblib.load(model_path)
 scaler = joblib.load(scaler_path)
 pca = joblib.load(pca_path)
 onehot_encoder = joblib.load(onehot_encoder_path)
@@ -43,8 +43,8 @@ def user_input_features():
     # Numerical features - Adjust the ranges and default values as needed
     amt = st.sidebar.number_input('Transaction Amount', value=50000, min_value=10000, max_value=1000000, step=1000)
     lat = st.sidebar.number_input('Transaction Latitude', value=43.0351, min_value=-90, max_value=90, step=1000)
-    long = st.sidebar.number_input('Transaction Longitude', value=-108.2024, min_value=-180, max_value=180, step=1000)
-    merch_lat = st.sidebar.number_input('Merchant Latitude', value=43.0351, min_value=-90, max_value=90, step=1000)
+    long = st.sidebar.number_input('Transaction Longitude', value=-108, min_value=-180, max_value=180, step=1000)
+    merch_lat = st.sidebar.number_input('Merchant Latitude', value=43, min_value=-90, max_value=90, step=1000)
     merch_long = st.sidebar.number_input('Merchant Longitude', value=-108.2024, min_value=-180, max_value=180, step=1000)
     city_pop = st.sidebar.number_input('City Population', value=50000, min_value=10000, max_value=1000000, step=1000)
 
