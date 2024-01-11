@@ -10,11 +10,11 @@ from imblearn.over_sampling import SMOTE
 import joblib
 
 # Load the data
-data = pd.read_csv('fraud.zip', compression='zip')
+# data = pd.read_csv('fraud.zip', compression='zip')
+data = pd.read_csv('fraud100.csv')
 
 # List of numerical columns for distribution analysis
-numerical_columns = ['amt', 'lat', 'long', 
-                     'merch_lat', 'merch_long', 'city_pop']
+numerical_columns = ['amt', 'lat', 'long', 'merch_lat', 'merch_long', 'city_pop']
 
 # Function to apply winsorization based on Z-score
 def winsorize_by_zscore(data, column, lower_bound=-3, upper_bound=3):
@@ -31,16 +31,13 @@ for col in numerical_columns:
 
 # Initialize and fit encoders
 onehot_encoder = OneHotEncoder(sparse=False)
-label_encoder = LabelEncoder()
-label_encoder.fit(winsorized_data_zscore['is_fraud'])
-onehot_encoded_data = onehot_encoder.fit_transform(winsorized_data_zscore[['merchant', 'category', 'city', 'state', 'job']])
-label_encoded_data = label_encoder.transform(winsorized_data_zscore['is_fraud'])
+onehot_encoded_data = onehot_encoder.fit_transform(winsorized_data_zscore[['category', 'city', 'state']])
 
 # Create DataFrames for encoded data
-onehot_df = pd.DataFrame(onehot_encoded_data, columns=onehot_encoder.get_feature_names_out(['merchant', 'category', 'city', 'state', 'job']))
+onehot_df = pd.DataFrame(onehot_encoded_data, columns=onehot_encoder.get_feature_names_out(['category', 'city', 'state']))
 
 # Concatenate the encoded data with the original dataset
-encoded_data = pd.concat([winsorized_data_zscore.drop(columns=['trans_date_trans_time', 'merchant', 'category', 'city', 'state', 'job', 'dob', 'trans_num']), 
+encoded_data = pd.concat([winsorized_data_zscore.drop(columns=['category', 'city', 'state']), 
                           onehot_df], axis=1)
 
 # Feature Scaling

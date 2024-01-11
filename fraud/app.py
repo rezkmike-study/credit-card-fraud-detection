@@ -23,22 +23,21 @@ onehot_encoder = joblib.load(onehot_encoder_path)
 
 def preprocess_input(input_data):
     # Ensure the input_data columns match the expected training columns
-    training_column_order = ['amt', 'lat', 'long', 'merch_lat', 'merch_long', 'city_pop',
-                             'category_shopping_pos', 'category_entertainment', 'category_gas_transport', 
-                             'category_grocery_net', 'category_grocery_pos', 'category_misc_net', 'category_misc_pos',
-                             'category_shopping_net', 'city_Orient', 'city_Malad-City', 'city_Grenada', 'city_High-Rolls-Mountain-Park', 
-                             'city_Freedom', 'city_Honokaa', 'city_Valentine', 'city_Westfir', 'city_Thompson', 'city_Conway', 'city_Athena', 
-                             'city_San-Jose', 'city_Ravenna', 'city_Parks', 'city_Fort-Washakie', 'city_Littleton', 'city_Meadville', 
-                             'city_Moab', 'city_Hawthorne', 'city_Manville', 'city_June-Lake', 'city_Sixes', 'city_Holstein', 
-                             'city_Westerville', 'city_Ballwin', 'city_Fields-Landing', 'city_Louisiana', 'city_Kansas-City', 'city_Mesa', 
-                             'city_Lonetree', 'city_Centerview', 'city_Colorado-Springs', 'city_Blairsden-Graeagle', 'city_Cardwell', 
-                             'city_Phoenix', 'city_Newhall', 'city_Tomales', 'city_Redford', 'city_Weeping-Water', 'city_Portland', 
-                             'city_Iliff', 'city_Burlington', 'city_Wales', 'city_Mound-City', 'city_Greenview', 'city_Lakeport', 
-                             'city_Llano', 'city_Carlotta', 'city_Dumont', 'city_Fullerton', 'city_North-Loup', 'city_Browning', 
-                             'city_Kent', 'city_Fiddletown', 'city_Huntington-Beach', 'city_Meridian', 'city_Glendale', 'city_Alva', 
-                             'city_Blairstown', 'city_Laguna-Hills', 'city_Albuquerque', 'city_Azusa', 'city_Gardiner', 'city_Rock-Springs', 
-                             'city_Paauilo', 'city_Eugene', 'city_Daly-City', 'city_Mendon', 'city_Powell-Butte', 'state_WA', 'state_ID', 'state_CA', 
-                             'state_NM', 'state_WY', 'state_HI', 'state_NE', 'state_OR', 'state_UT', 'state_AZ', 'state_CO', 'state_MO', 'state_AK'
+    training_column_order = ['amt', 'lat', 'long', 'city_pop', 'merch_lat', 'merch_long', 
+                             'category_entertainment', 'category_gas_transport', 'category_grocery_net','category_grocery_pos',  
+                               'category_misc_net', 'category_misc_pos',
+                             'category_shopping_net', 'category_shopping_pos', 'city_Albuquerque', 'city_Alva', 'city_Athena', 'city_Azusa', 'city_Ballwin', 
+                             'city_Blairsden-Graeagle', 'city_Blairstown', 'city_Browning', 'city_Burlington', 'city_Cardwell', 'city_Carlotta', 'city_Centerview', 
+                             'city_Colorado-Springs', 'city_Conway', 'city_Daly-City', 'city_Dumont', 'city_Eugene', 'city_Fiddletown', 'city_Fields-Landing', 
+                             'city_Fort-Washakie', 'city_Freedom', 'city_Fullerton', 'city_Gardiner', 'city_Glendale', 'city_Greenview', 'city_Grenada', 
+                             'city_Hawthorne', 'city_High-Rolls-Mountain-Park', 'city_Holstein', 'city_Honokaa', 'city_Huntington-Beach', 'city_Iliff', 
+                             'city_June-Lake', 'city_Kansas-City', 'city_Kent', 'city_Laguna-Hills', 'city_Lakeport', 'city_Littleton', 'city_Llano', 
+                             'city_Lonetree', 'city_Louisiana', 'city_Malad-City', 'city_Manville', 'city_Meadville', 'city_Mendon', 'city_Meridian', 
+                             'city_Mesa', 'city_Moab', 'city_Mound-City', 'city_Newhall', 'city_North-Loup', 'city_Paauilo', 'city_Parks', 'city_Phoenix', 
+                             'city_Portland', 'city_Powell-Butte', 'city_Ravenna', 'city_Redford', 'city_Rock-Springs', 'city_San-Jose', 'city_Sixes', 
+                             'city_Thompson', 'city_Tomales', 'city_Valentine', 'city_Wales', 'city_Weeping-Water', 'city_Westerville', 'city_Westfir', 
+                             'city_Orient',   
+                             'state_AK', 'state_AZ', 'state_CA', 'state_CO', 'state_HI', 'state_ID', 'state_MO', 'state_NE', 'state_NM''state_OR', 'state_UT', 'state_WA', 'state_WY'
                             ]
 
     # Reorder the columns in the input_data DataFrame to match the training order
